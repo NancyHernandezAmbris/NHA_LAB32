@@ -1,0 +1,16 @@
+###LAB API DATAMEx
+
+install.packages("jsonlite")
+library(jsonlite)
+file.choose()
+
+datos_api2 <- fromJSON("C:\\Users\\Nancy\\Desktop\\Doctorado\\Asignaturas\\Complejidad económica\\Labs\\LAB32\\Municipality-Year-records.json")
+class(datos_api2)
+names(datos_api2)
+
+View(datos_api2[["data"]])
+
+final_API <- as.data.frame((datos_api2[["data"]]))
+class(final_API)
+write.csv(final_API, file = "final_API.CSV")
+getwd()
